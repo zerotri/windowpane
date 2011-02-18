@@ -1,0 +1,50 @@
+<?php
+
+include("header.php");
+?>
+<script type="text/javascript">
+var display = true;
+$(document).ready(function(){
+	$("#title").click(function(){
+		if(display)
+		{
+			$("#content").slideUp(200);
+			display = false;
+		}
+		else
+		{
+			$("#content").slideDown(200);
+			display = true;
+		}
+	});
+});
+					$(document).ready(function() {						// initial accordion slide-down						accordion_used = false						$('#dummy').fadeOut(500, function(){							if (accordion_used == false) {								$('#create-slide .opener').addClass("active")								$('#create-slide .slide').slideDown(400)								$('#work-slide .opener').removeClass("active")								$('#work-slide .slide').slideUp(400)							}						});												// accordion mouseover						$('.opener').mouseover(function(){							accordion_used = true							if (!$(this).hasClass("active")) {								$('.slide').stop(true, true)								$('.opener').each(function(){									$(this).removeClass("active")									$(this).next().slideUp("fast")								})								$(this).addClass("active")								$(this).next().slideDown("fast")							}						});					});
+</script>
+<div class="menu">
+	<div class="title">
+		<!--Menu Title-->
+	</div>
+	<div class="content">
+		<!--Some Text-->
+	</div>
+</div>
+<div style="width:400px;">
+	<div class="block">sequese
+		<div class="title" id="title">
+			Moo
+		</div>
+		<div class="cell">
+			<img class="arrow-right" style="background:url(/public/images/imgsprite.png); position:0px 0px; width:32px; height:32px;" src="/public/images/clear.png">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<img class="arrow-right" src="/public/images/clear.png">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<div class="content" id="content">
+			<p>Some Lines go Here
+			</p>
+		</div>
+	</div>
+</div>
+<?php
+include("footer.php");
+?>

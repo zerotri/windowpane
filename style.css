@@ -1,0 +1,72 @@
+div.block-title {
+	/* border */
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border: 1px solid #ccc;
+	border-bottom-color: #bbb;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+	
+	/* positioning */
+    padding: 4px 9px;
+
+	/* font */
+    color: #333;
+    font-size: 13px;
+    text-shadow: white 0px 1px 0px;
+
+	/* gradients */
+	background: #999; /* default for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#aaaaaa'); /* IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#aaa)); /* webkit */
+	background: -moz-linear-gradient(top,  #ccc,  #aaa); /* mozilla */
+	
+}
+div.block-cell {
+	/* border */
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border: 1px solid #ccc;
+	border-top-color: #ddd;
+	border-bottom-color: #bbb;
+    border-top-left-radius: 0px 0px;
+    border-top-right-radius: 0px 0px;
+	
+	/* positioning */
+    padding: 4px 9px;
+
+	/* font */
+    color: #333;
+    font-size: 13px;
+    text-shadow: white 0px 1px 0px;
+
+	/* gradients */
+	background: #999; /* default for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc'); /* IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc)); /* webkit */
+	background: -moz-linear-gradient(top,  #eee,  #ccc); /* mozilla */	
+}
+div.block-content {
+	/* border */
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+    border: 1px solid #ccc;
+	border-top-color: #ddd;
+	border-bottom-color: #bbb;
+    border-top-left-radius: 0px 0px;
+    border-top-right-radius: 0px 0px;
+	
+	/* positioning */
+    padding: 4px 9px;
+
+	/* font */
+    color: #333;
+    font-size: 13px;
+    text-shadow: white 0px 1px 0px;
+
+	/* gradients */
+	background: #999; /* default for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#eeeeee'); /* IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#eee)); /* webkit */
+	background: -moz-linear-gradient(top,  #ccc,  #eee); /* mozilla */	
+}
