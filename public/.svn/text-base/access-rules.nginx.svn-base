@@ -1,5 +1,0 @@
-if (!-e $request_filename)
-{
-	rewrite ^()$ /public/index.php last;
-	rewrite ^(.*)$ /public/index.php?url=$1 last;
-}
