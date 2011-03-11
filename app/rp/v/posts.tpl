@@ -8,7 +8,7 @@
 				<a href="user/<?php echo $post['user'];?>"><?php echo $post['user'];?></a> 325 posts
 			</div>
 		<div class="text">
-			<?php echo $post['post'];?>
+			<?php echo $post['content'];?>
 		</div>
 	</div>
 </tr>

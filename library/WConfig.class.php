@@ -28,7 +28,7 @@ class WConfig
 	function loadConfig($filename)
 	{
 		$vars = sfYaml::load($filename);
-		$this->_variables = parseArray("windowpane.config",$this->_variables, $vars);
+		$this->_variables = parseArray("windowpane",$this->_variables, $vars);
 	}
 	function __construct()
 	{

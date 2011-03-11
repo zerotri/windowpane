@@ -15,7 +15,11 @@ class Windowpane
 	{
 		$this->config = new WConfig();
 		$this->db = new WMySQL();
-		$this->db->connect("127.0.0.1:3306","root","root", "windowpane");
+		$this->db->connect(
+			$this->config->get("windowpane.sql.development.server"),
+			$this->config->get("windowpane.sql.development.username"),
+			$this->config->get("windowpane.sql.development.password"),
+			$this->config->get("windowpane.sql.development.database"));
 	}
 	public function __destruct()
 	{

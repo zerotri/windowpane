@@ -4,6 +4,9 @@ sql:
     production:
         database: pop_db
     development:
-        database: pop_db_dev
+        database: windowpane
+        username: root
+        password: root
+        server: localhost:3306
     testing:
         database: pop_db_test
