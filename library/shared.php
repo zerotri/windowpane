@@ -19,9 +19,9 @@ function errorHandler($error_level, $error_message, $error_file, $error_line, $e
 	echo '</span>';
 	echo "<strong><b>$type:</b></strong> $error_message on Line</b> $error_line <b>" .
 		"in file [ </b> $error_file <b>]</b>";
-	echo "Backtrace:<p>";
+	echo "Backtrace:<pre>";
 	var_dump(debug_backtrace());
-	echo "</p>";
+	echo "</pre>";
 	die();
 }
 
@@ -36,7 +36,7 @@ function setReporting() {
 		error_reporting(E_ALL);
 		ini_set('display_errors','Off');
 		ini_set('log_errors', 'On');
-		ini_set('error_log', ROOT.DS.'tmp'.DS.'logs'.DS.'error.log');
+		ini_set('error_log', ROOT.'/tmp/logs/error.log');
 	}
 }
 
@@ -106,11 +106,12 @@ function someOtherFunction($name, $value)
 	return $value;
 }
 function callHook() {
-	require_once(ROOT . '/library/WUtil.class.php');
-	include(ROOT . '/library/WHook.class.php');
+	//require_once(ROOT . '/library/WUtil.class.php');
+	//include(ROOT . '/library/WHook.class.php');
 	global $url;
 	global $default;
 
+	$config = new WConfig();
 	WHook::register("hook", "someFunction");
 	WHook::register("wobject_set_value", "someOtherFunction");
 	//WHook::unregister("hook", "someFunction");
@@ -132,11 +133,7 @@ function loadPage($pagename)
 }
 function __loadinclude($filename)
 {
-	//ob_start(); # start buffer
 	$data = WUtil::pipeFunctionIntoString('include', $filename );
-	# we pass the output to a variable
-	//$data = ob_get_contents();
-	//ob_end_clean(); # end buffer
 	return $data;
 }
 

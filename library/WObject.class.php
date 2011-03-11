@@ -12,7 +12,6 @@ class WObject {
 
 		$this->_variables = array();
 	}
-
 	function __set($name,$value) {
 	    $var = WHook::call("wobject_set_value", $name, $value);
 	    if(isset($var))

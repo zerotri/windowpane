@@ -17,6 +17,13 @@
 }
 
 /* reds */
+@lighterred: #ef6262;
+@lightred: #ec4343;
+@normalred: #e51717;
+@darkred: #b71212;
+@darkerred: #991111;
+
+/* blues */
 @lighterblue: #6262ef;
 @lightblue: #4343ec;
 @normalblue: #1717e5;
@@ -97,11 +104,18 @@ p {
 	font-size: 1em;
 }
 
+
 .post {
+	&#left{
+		border-left: @darkblue solid 10px;
+		@borderradius(7px; 0px; 7px; 0px);
+	};
+	&#right{
+		border-right: @darkred solid 10px;
+		@borderradius(0px; 7px; 0px; 7px);
+	}
 	text-shadow: 0;
 	@shadow;
-	@borderradius(0px; 7px; 7px; 0px);
-	border-right: @darkblue solid 10px;
 	color: @lightgrey;
 	padding: 10px;
 	margin: 40px;

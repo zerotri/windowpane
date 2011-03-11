@@ -2,12 +2,8 @@
 
 class WView
 {
-	private $vars = array("author" => "wynter woods");
+	private $vars = array();
 	private $path = "";
-	public function __construct($file)
-	{
-		$this->path = $file;//ROOT . '/views' . '/' . $file . '.php';
-	}
 	public function __set($var, $val)
 	{
 		$this->vars[$var] = $val;
@@ -15,6 +11,10 @@ class WView
 	public function __get($var)
 	{
 		return $this->vars[$var];
+	}
+	public function setFile($file)
+	{
+		$this->path = $file;
 	}
 	public function render()
 	{

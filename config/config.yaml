@@ -1,0 +1,9 @@
+environment:
+    url: "http://localhost"
+sql:
+    production:
+        database: pop_db
+    development:
+        database: pop_db_dev
+    testing:
+        database: pop_db_test
