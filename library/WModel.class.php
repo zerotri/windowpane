@@ -2,12 +2,22 @@
 
 class WModel
 {
+	public $id;
 	public $data = array();
 	public $template = array();
-	public function loadModel($filename)
+	private $type;
+	public function __construct($type)
 	{
-		$vars = WConfig::loadYAML($filename);
-		//foreach()
+		$this->type = $type;
+	}
+	public function getType()
+	{
+		return $this->type;
+	}
+	public function loadModel()
+	{
+		//$vars = WConfig::loadYAML("/app/".$model."/".$model.".yaml");
+		//$vars[$this->type];
 	}
 	public function loadData($fields = "*", $first = 0, $count = 0)
 	{

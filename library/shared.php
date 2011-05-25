@@ -2,43 +2,11 @@
 //include('windowpane.php');
 /** Check if environment is development and display errors **/
 
-function errorHandler($error_level, $error_message, $error_file, $error_line, $error_context)
-{
-	$type = "";
-	switch($error_level)
-	{
-		case E_WARNING: $type="Warning"; break;
-		case E_NOTICE: $type="Notice"; break;
-		case E_USER_ERROR: $type="User Error"; break;
-		case E_USER_WARNING: $type="User Warning"; break;
-		case E_USER_NOTICE: $type="User Notice"; break;
-		case E_RECOVERABLE_ERROR: $type="Recoverable Error"; break;
-		case E_ALL: $type="All"; break;
-		default: $type="Unknown Error"; break;
-	}
-	echo '</span>';
-	echo "<strong><b>$type:</b></strong> $error_message on Line</b> $error_line <b>" .
-		"in file [ </b> $error_file <b>]</b>";
-	echo "Backtrace:<pre>";
-	var_dump(debug_backtrace());
-	echo "</pre>";
-	die();
-}
 
 function buildPath($formattedPath) {
 	return str_replace("/", DIRECTORY_SEPARATOR , $formattedPath);
 }
-function setReporting() {
-	if (DEVELOPMENT_ENVIRONMENT == true) {
-		error_reporting(E_ALL);
-		ini_set('display_errors','On');
-	} else {
-		error_reporting(E_ALL);
-		ini_set('display_errors','Off');
-		ini_set('log_errors', 'On');
-		ini_set('error_log', ROOT.'/tmp/logs/error.log');
-	}
-}
+
 
 /** Check for Magic Quotes and remove them **/
 
@@ -139,22 +107,7 @@ function __loadinclude($filename)
 
 /** Autoload any classes that are required **/
 
-function __autoload($className) {
-	$filePaths = array(
-		0=>buildPath(ROOT . '/library/' . $className . '.class.php'),
-		1=>buildPath(ROOT . '/library/' . $className . '.inc.php'),
-		2=>buildPath(ROOT . '/app/controllers/' . $className . '.php'),
-		3=>buildPath(ROOT . '/app/models/' . $className . '.mdl'));
-	foreach($filePaths as $path)
-	{
-		if(file_exists($path))
-		{
-			include($path);
-			return;
-		}
-	}
-	die("<br>Could not load class $className.<br>");
-}
+
 
 $cache = new Cache();
 $inflect = new Inflection();

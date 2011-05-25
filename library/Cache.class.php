@@ -2,7 +2,7 @@
 class Cache {
 
 	function get($fileName) {
-		$fileName = ROOT.'/tmp/cache/'.$fileName;
+		$fileName = Windowpane::getRootDirectory().'/tmp/cache/'.$fileName;
 		if (file_exists($fileName)) {
 			$handle = fopen($fileName, 'rb');
 			$variable = fread($handle, filesize($fileName));
@@ -14,7 +14,7 @@ class Cache {
 	}
 	
 	function set($fileName,$variable) {
-		$fileName = ROOT.'/tmp/cache/'.$fileName;
+		$fileName = Windowpane::getRootDirectory().'/tmp/cache/'.$fileName;
 		$handle = fopen($fileName, 'a');
 		fwrite($handle, serialize($variable));
 		fclose($handle);

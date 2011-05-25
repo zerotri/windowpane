@@ -14,7 +14,7 @@ class WView
 	}
 	public function setFile($file)
 	{
-		$this->path = $file;
+		$this->path = Windowpane::getRootDirectory() . $file;
 	}
 	public function render()
 	{

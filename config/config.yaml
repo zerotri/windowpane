@@ -1,12 +1,25 @@
 environment:
-    url: "http://localhost"
-sql:
+    url:                "http://zerose.co.vu"
+    debug:              true
+    mode:               development
+    folders:
+        model:          "{root}/app/m/"
+        views:          "{root}/app/v/"
+        controllers:    "{root}/app/c/"
+    files:
+        routes_file:    "{root}/config/routes.yml"
+
+routing:
+    defaults:
+        controller:     Post
+        action:         Index
+db:
     production:
-        database: pop_db
+        database:       pop_db
     development:
-        database: windowpane
-        username: root
-        password: root
-        server: localhost:3306
+        database:       windowpane
+        username:       root
+        password:       root
+        server:         :/tmp/mysql.sock
     testing:
-        database: pop_db_test
+        database:       pop_db_test

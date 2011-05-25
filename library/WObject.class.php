@@ -6,10 +6,11 @@ class WObject {
 	protected $_id;
 	protected $_variables;
 
-	function __construct() {
+	function __construct($type, $id) {
 		
 		global $inflect;
-
+		$this->_type = $type;
+		$this->_id = $id;
 		$this->_variables = array();
 	}
 	function __set($name,$value) {

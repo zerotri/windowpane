@@ -1,18 +1,26 @@
 <?php
-include (ROOT.'/includes/sfYaml.php');
+include(Windowpane::getRootDirectory().'/includes/sfYaml.php');
 function parseArray($inputname, $arraytoappend, $data)
 {
+	global $windowpane;
 	foreach($data as $key => $value)
 	{
 		if(is_array($value))
 		{
-			$branchName = $inputname.".$key";
+			if($inputname != "")
+				$branchName = $inputname.".$key";
+			else
+				$branchName = $inputname."$key";
 			//$arraytoappend[$inputname] = array();
 			$arraytoappend = parseArray($branchName, $arraytoappend, $value);
 		}
 		else
 		{
-			$branchName = $inputname.".$key";
+			if($inputname != "")
+				$branchName = $inputname.".$key";
+			else
+				$branchName = $inputname."$key";
+			$value = preg_replace( "/\{root\}/i", Windowpane::GetRootDirectory(), $value);
 			$arraytoappend[$branchName] = $value;
 		}
 	}
@@ -27,12 +35,14 @@ class WConfig
 	}
 	function loadConfig($filename)
 	{
+		include(Windowpane::getRootDirectory().'/config/config-defaults.php');
+		$this->Config = $Config;
 		$vars = sfYaml::load($filename);
-		$this->_variables = parseArray("windowpane",$this->_variables, $vars);
+		$this->_variables = parseArray("",$this->_variables, $vars);
 	}
 	function __construct()
 	{
-		$this->loadConfig(ROOT.'/config/config.yaml');
+		$this->loadConfig(Windowpane::getRootDirectory().'/config/config.yaml');
 	}
 	function get($name)
 	{

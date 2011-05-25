@@ -37,21 +37,37 @@ define('NL', "\n");
 define ('ROOT', dirname(dirname(__FILE__)));
 require( ROOT . '/library/lessc.inc.php' );
 
+function fopen_recursive($path, $mode, $chmod=0755){ 
+  preg_match('`^(.+)/([a-zA-Z0-9]+\.[a-z]+)$`i', $path, $matches); 
+  $directory = $matches[1]; 
+  $file = $matches[2]; 
+
+  if (!is_dir($directory)){ 
+    if (!mkdir($directory, $chmod, 1)){ 
+    return FALSE; 
+    } 
+  } 
+ return fopen ($path, $mode); 
+}
+
 function less_php($less){
-  $source = preg_replace('/(\.less|_less)\Z/i', '', $less);
-  $cache = ROOT.'/tmp/cache'.$source.'.css';
-  /*if(file_exists($cache) && filemtime($cache) >= filemtime(ROOT."/public/".$source.'.less')):
-    $f = fopen($cache, 'r');
-    echo fread($f, filesize($cache));
-    fclose($f);
-  else:*/
-    lessc::ccompile(ROOT."/public/".$source.".less", $cache);
-    $less = new lessc(ROOT."/public/".$source.".less");
-    $f = fopen($cache, 'w');
-    fputs($f, $less->parse());
-    fclose($f);
-    echo $less->parse();
-  //endif;
+	$source = preg_replace('/(\.less|_less)\Z/i', '', $less);
+	$cache = ROOT.'/tmp/cache/'.$source.'.css';
+	if(file_exists($cache) && filemtime($cache) >= filemtime(ROOT."/public/".$source.'.less'))
+	{
+		$f = fopen_recursive($cache, 'r');
+		echo fread($f, filesize($cache));
+		fclose($f);
+	}
+	else
+	{
+    	//lessc::ccompile(ROOT."/public/".$source.".less", $cache);
+	    $less = new lessc(ROOT."/public/".$source.".less");
+	    $f = fopen_recursive($cache, 'w');
+	    fputs($f, $less->parse());
+	    fclose($f);
+	    echo $less->parse();
+	}
 }
 
 if ($_GET):
