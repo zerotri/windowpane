@@ -4,7 +4,7 @@ include("library/conjugation.php");
 function debug_func($object, $function, $vars = null)
 {
 	global $windowpane;
-	if($windowpane->config->get("environment.debug") == false)
+	if($windowpane->Config['Environment']['Debug'] == false)
 		return;
 	echo "<pre>";
 	echo get_class($object)."::$function()";
