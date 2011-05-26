@@ -1,0 +1,6 @@
+view:
+    __table: views
+    __orderby: id
+    -id
+    -user
+    -content

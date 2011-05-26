@@ -1,0 +1,6 @@
+post:
+    __table: posts
+    __orderby: id
+    -id
+    -user
+    -content

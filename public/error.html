@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<style>
+			body
+			{
+				font-family: 'Ubuntu', serif;
+				background: #EEEEEE;
+			}
+			h1
+			{
+				margin: 0px;
+				padding: 10px 20px;
+				background: #FFF0C9;
+				color: #A65656;
+				border-radius: 7px 7px 0 0;
+			}
+			p
+			{
+				color: #FFD7BE;
+				padding: 20px; margin: 0;
+			}
+			pre
+			{
+				color: #FFD7BE;
+				padding: 0px 0px 0px 20px; margin: 0;
+			}
+			a
+			{
+				text-decoration: none;
+				color: #CFCB73;
+				-webkit-transition: all 0.5s linear;
+			}
+			a:hover
+			{
+				text-decoration: none;
+				color: #A65656;
+				-webkit-transition: all 0.5s linear;
+			}
+			.column
+			{
+				background: #E08565;
+				width: 60%;
+				margin: 10% auto;
+				padding: 0;
+				border-radius: 7px;
+				box-shadow: 2px 2px 8px #888;
+				-webkit-box-shadow: 0px 2px 8px 4px rgba(128,128,128,0.6);
+			}
+		</style>
+		<title>
+			Whoops!
+		</title>
+	</head>
+	<body>
+		<div class="column">
+			<h1>
+				<?php echo $error['title']; ?>
+			</h1>
+			<p>
+				<b>Error:</b> <?php echo $error['string']; ?><br>
+				<b>File:</b> <?php echo $error['file']; ?><br>
+				<b>Code:</b> <?php echo $error['code']; ?><br>
+				<b>Trace:</b>
+				<pre><?php echo $error['backtrace']; ?></pre>
+			</p>
+		</div>
+	</body>
+</html>
