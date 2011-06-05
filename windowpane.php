@@ -72,7 +72,7 @@ function errorHandler($error_level, $error_message, $error_file, $error_line, $e
 	$error['code'] = $error_context;
 	$error['backtrace'] = Print_r(debug_backtrace(),true);
     ob_start();
-    include(dirname(__FILE__)."/../public/error.html");
+    include(dirname(__FILE__)."/public/error.html");
     echo ob_get_clean();
 	die();
 }
