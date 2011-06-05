@@ -72,7 +72,7 @@
 				position: fixed;
 				height: 50px;
 				top: 0px;
-				left: 0px;
+				left: 250px;
 				right: 0px;
 				background-image: url('public/theme/expression/images/bar_noise.png');
 			}
@@ -81,7 +81,7 @@
 				position: fixed;
 				height: 50px;
 				top: 0px;
-				left: 0px;
+				left: 250px;
 				right: 0px;
 				border: 1px solid rgba(204,204,204,0.75);
 				background-image: -webkit-gradient(
@@ -128,6 +128,11 @@
 		</script>
 	</head>
 	<body>
+		<div class="settings_bottombar">
+			<div id="gradient_overlay">
+				<div class="aspen" name="button">Pooop</div>
+			</div>
+		</div>
 		<div class="admin_links">
 			<a name="settings" class="clickable" href="#"><b>Settings</b></a><br>
 			<a name="themes" class="clickable" href="#"><b>Themes</b></a><br>
@@ -138,11 +143,6 @@
 		</div>
 		<div class="settings">
 			<h1 id="admin_control_panel">Admin Control Panel</h1>
-			<div class="settings_bottombar">
-				<div id="gradient_overlay">
-					<div class="aspen" name="button">Pooop</div>
-				</div>
-			</div>
 			<div class="setting_groups">
 				<div class="setting_group" id="settings" style="z-index: 1;">
 					<h3>Settings</h3>
