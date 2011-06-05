@@ -56,7 +56,7 @@ function less_php($less){
 	if(file_exists($cache) && filemtime($cache) >= filemtime(ROOT."/public/".$source.'.less'))
 	{
 		$f = fopen_recursive($cache, 'r');
-		echo fread($f, filesize($cache));
+		echo "/*cached file*/".fread($f, filesize($cache));
 		fclose($f);
 	}
 	else
@@ -66,7 +66,7 @@ function less_php($less){
 	    $f = fopen_recursive($cache, 'w');
 	    fputs($f, $less->parse());
 	    fclose($f);
-	    echo $less->parse();
+	    echo "/*Could not load cached file: $cache*/".$less->parse();
 	}
 }
 

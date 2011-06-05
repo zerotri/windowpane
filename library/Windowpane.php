@@ -1,13 +1,13 @@
 <?php
 
-include('../config/inflection.php');
-include('WHook.class.php');
-include('WObject.class.php');
-include('datastore/WDatastore.class.php');
-include('datastore/WMySQLDatabase.class.php');
-include('WUtil.class.php');
-include('WModel.class.php');
-include('WView.class.php');
+require_once('config/inflection.php');
+require_once('library/WHook.class.php');
+require_once('library/WObject.class.php');
+require_once('library/datastore/WDatastore.class.php');
+require_once('library/datastore/WMySQLDatabase.class.php');
+require_once('library/WUtil.class.php');
+require_once('library/WModel.class.php');
+require_once('library/WView.class.php');
 
 class Windowpane
 {
@@ -174,13 +174,13 @@ class Windowpane
 	{
 		if ((int)method_exists(get_class($object), $function))
 		{
-			return call_user_func(array($object,$function),$data);
+			return call_user_func(array($object, $function),$data);
 		}
 		else
 		{
 			if ((int)method_exists(get_class($object), $fallback))
 			{
-				return call_user_func(array($object,$fallback),$data);
+				return call_user_func(array($object, $fallback),$data);
 			}
 			else
 			{

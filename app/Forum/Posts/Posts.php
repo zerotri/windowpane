@@ -3,7 +3,7 @@ class Posts extends WController
 {
 	public function view($id = null)
 	{
-		return $this->render();
+		return "This works!";//$this->render();
 	}
 	public function viewChrome($id = null)
 	{
