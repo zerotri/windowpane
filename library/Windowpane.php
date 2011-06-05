@@ -108,10 +108,10 @@ class Windowpane
 	public function __construct()
 	{
 		//load default config settings
-		include(Windowpane::getRootDirectory().'/config/config-defaults.php');
-		
+		require_once(Windowpane::getRootDirectory().'/config/config-defaults.php');
+
 		//load customized config settings, overriding the defaults
-		include(Windowpane::getRootDirectory().'/config/config.php');
+		require_once(Windowpane::getRootDirectory().'/config/config.php');
 		$this->Config = $Config;
 		
 		//create the database class
