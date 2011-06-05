@@ -48,7 +48,7 @@ function catchExceptions($exception)
 	$error['code'] = Print_r($exception->getCode(),true);
 	$error['backtrace'] = $exception->getTraceAsString();
 	ob_start();
-    include(dirname(__FILE__)."../public/error.html");
+    include(dirname(__FILE__)."/public/error.html");
     echo ob_get_clean();
 }
 function errorHandler($error_level, $error_message, $error_file, $error_line, $error_context)
