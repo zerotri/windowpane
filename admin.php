@@ -81,7 +81,7 @@
 				position: fixed;
 				height: 50px;
 				top: 0px;
-				left: 250px;
+				left: 0px;
 				right: 0px;
 				border: 1px solid rgba(204,204,204,0.75);
 				background-image: -webkit-gradient(
@@ -106,7 +106,7 @@
 				float:left;
 				vertical-align: top;
 				width: 10%;
-				margin: 10px 0 0 10px;
+				margin: 60px 0 0 10px;
 				top: 50px;
 				bottom: 0px;
 				/*margin: 0px;
