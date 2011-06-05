@@ -3,6 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<link id="basic-css" rel="stylesheet" type="text/css" href="public/less.php?default.less">
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 		<style>
 			body
@@ -38,7 +39,7 @@
 			{
 				text-decoration: none;
 				color: #A65656;
-				//padding-left: 10px;
+				/*padding-left: 10px;*/
 				-webkit-transition: all 0.25s linear;
 			}
 			.inside
@@ -137,7 +138,9 @@
 		<div class="settings">
 			<h1 id="admin_control_panel">Admin Control Panel</h1>
 			<div class="settings_bottombar">
-				<div id="gradient_overlay"></div>
+				<div id="gradient_overlay">
+					<div class="aspen" name="button">Pooop</div>
+				</div>
 			</div>
 			<div class="setting_groups">
 				<div class="setting_group" id="settings" style="z-index: 1;">
