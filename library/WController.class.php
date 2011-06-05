@@ -19,7 +19,7 @@ class WController
 		$this->model = new WModel($model);
 		$this->view = $windowpane->generate("View");
 		$appfolder = ucwords($controller);
-		$this->view->setFile("/app/".$appfolder."/".$action.".tpl");
+		$this->view->setFile("/app/{$windowpane->Config['Routing']['Defaults']['Application']}/$appfolder/$action.tpl");
 		$properData = array();
 		$viewData = $this->model->loadData();
 		foreach($viewData as $index => $row)
