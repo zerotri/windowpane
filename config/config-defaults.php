@@ -64,4 +64,5 @@ $Config['Database']['Staging']['Username']				=	"root";
 $Config['Database']['Staging']['Password']				=	"root";
 $Config['Database']['Staging']['Server']				=	":/tmp/mysql.sock";
 
+include('config/config.php');
 ?>
