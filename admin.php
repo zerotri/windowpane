@@ -53,8 +53,7 @@
 				vertical-align: top;
 				text-align: left;
 				position: fixed;
-				top: 0px;
-				bottom: 51px;
+				top: 50px;
 				left: 250px;
 				right: 0px;
 				border: 1px solid rgba(204,204,204,0.75);
@@ -72,8 +71,8 @@
 			{
 				position: fixed;
 				height: 50px;
-				bottom: 0px;
-				left: 251px;
+				top: 0px;
+				left: 0px;
 				right: 0px;
 				background-image: url('public/theme/expression/images/bar_noise.png');
 			}
@@ -108,6 +107,8 @@
 				vertical-align: top;
 				width: 10%;
 				margin: 10px 0 0 10px;
+				top: 50px;
+				bottom: 0px;
 				/*margin: 0px;
 				padding: 20px;*/
 			}
