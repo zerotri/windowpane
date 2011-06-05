@@ -80,7 +80,7 @@
 			{
 				position: fixed;
 				height: 50px;
-				bottom: 0px;
+				top: 0px;
 				left: 250px;
 				right: 0px;
 				border: 1px solid rgba(204,204,204,0.75);
